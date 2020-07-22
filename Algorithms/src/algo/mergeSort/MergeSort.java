@@ -41,25 +41,21 @@ public class MergeSort {
 			}
 			k++;
 		}
-		
-		if (leftidx<=mid)
-		{
+
 			while(leftidx<=mid)
 			{
 			temp[k]=a[leftidx];
 			k++;
 			leftidx++;
 			}
-		}
-		
-		if(rightidx<=end)
-		{
+
+
 			while(rightidx<=end)
 			{
 			temp[k]=a[rightidx];
 			k++;
 			rightidx++;
-			}
+
 		}
 		
 		for (int i=0; i<temp.length;i++)
