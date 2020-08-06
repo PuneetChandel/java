@@ -12,11 +12,9 @@ public class Node {
         this.data=data;
         next=null;
     }
-    
+
     Node()
     {
-        
+
     }
-    
-   
 }

@@ -6,11 +6,11 @@ public class App {
 	 * @param args
 	 */
 	public static void main(String[] args) {
-		int a[] = new int[]{9,1,7,4,3,6,8,2,22,33,5,2,77,2};
+		int a[] = new int[]{9,1,7,4,3,6,8,2,22,33,5,2,77,2,-1};
 		//QuickSort qs= new QuickSort();
 	
 		//qs.quicksort(a, 0, a.length-1);
-		qs(a, 0, a.length-1);
+		qs2(a, 0, a.length-1);
 		for(int x : a)
 			System.out.println(x);
 	}
@@ -39,8 +39,8 @@ public class App {
 			}
 			low++;
 		}
-		j++;
-		swap(a,pvt,j);
+		// swap last position with pivot
+		swap(a,pvt,++j);
 
 		return j;
 	}
@@ -50,5 +50,43 @@ public class App {
 		int temp = a[i];
 		a[i]=a[j];
 		a[j]=temp;
+	}
+
+	private static void qs2(int nums[], int start, int end)
+	{
+
+		if(start<end)
+		{
+			int partition = partition2(nums,start,end);
+			qs(nums,start, partition-1);
+			qs(nums,partition+1, end);
+
+		}
+	}
+
+	private static int partition2(int nums[], int start, int end)
+	{
+		int k=start-1;
+		int pvt=end;
+
+		while(start<=end)
+		{
+			if(nums[start] <= nums[pvt])
+				swap2(nums,++k,start);
+			start++;
+		}
+
+		swap2(nums,++k,pvt);
+
+		return k;
+
+	}
+
+	private static void swap2(int nums[], int i, int j)
+	{
+		int temp = nums[i];
+		nums[i]=nums[j];
+		nums[j]=temp;
+
 	}
 }

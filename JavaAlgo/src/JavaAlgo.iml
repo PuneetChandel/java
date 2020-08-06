@@ -15,6 +15,10 @@
       <sourceFolder url="file://$MODULE_DIR$/LRU" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Jmd" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Heap" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/LL" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/morealgo" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/DP" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/algo" isTestSource="false" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />

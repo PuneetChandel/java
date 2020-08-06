@@ -90,11 +90,7 @@ public class BSTSolutions {
         }
 
 
-        result = inOrder(tree);
 
-        for (Integer a : result) {
-            System.out.print(" " + a + "  ");
-        }
 
 
         System.out.println("");
@@ -115,9 +111,12 @@ public class BSTSolutions {
         for (Integer a : result)
             System.out.print(" " + a + "  ");
 
+
+
+
         System.out.println("");
         System.out.println("Post Order :  ");
-        //result = postOrderTraversal(tree);
+        result = postOrderTraversal(tree);
         PostOrderRec(tree);
         //for (Integer a : result) {
         //    System.out.print(" " + a + "  ");
@@ -383,6 +382,7 @@ public class BSTSolutions {
         return result;
     }
 
+    //7/21/2020
     public static List<Integer> inOrder(Node root)
     {
         Stack<Node> stack = new Stack<>();
@@ -429,10 +429,10 @@ public class BSTSolutions {
         }
 
         while (!stack.isEmpty()) {
-            Node temp = stack.peek();
+            Node temp = stack.peek(); /// peek and not poll as root will be processed last
 
             if (temp.right == null) {
-                temp = stack.pop(); /// peek and not poll as root will be processed last
+                temp = stack.pop();
                 result.add(temp.data);
             } else {
                 Node p = temp.right;
@@ -457,9 +457,7 @@ public class BSTSolutions {
             return null;
         }
 
-        if (root != null) {
-            stack.push(root);
-        }
+       stack.push(root);
 
         while (!stack.isEmpty()) {
             Node temp = stack.pop();
@@ -471,6 +469,30 @@ public class BSTSolutions {
             if (temp.left != null) {
                 stack.push(temp.left);
             }
+        }
+
+        return result;
+    }
+
+    //7/22/2020
+    public static List<Integer> preOrder(Node root)
+    {
+        List<Integer> result = new ArrayList<>();
+        if(root==null)
+            return result;
+
+        Stack<Node> stack = new Stack<>();
+
+        stack.push(root);
+
+        while(!stack.empty())
+        {
+            Node temp=stack.pop();
+            result.add(temp.data);
+
+            if(temp.right!=null) stack.push(temp.right);
+            if(temp.left!=null) stack.push(temp.left);
+
         }
 
         return result;

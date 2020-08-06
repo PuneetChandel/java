@@ -9,6 +9,8 @@ Input: (2 -> 4 -> 3) + (5 -> 6 -> 4)
 Output: 7 -> 0 -> 8
  */
 import java.util.Stack;
+
+
 public class LinkList {
  
     public static void display(Node n)
@@ -24,7 +26,7 @@ public class LinkList {
     {
         Node slow=root;
         Node fast=root;
-        Stack<Integer> s = new Stack();
+        Stack<Integer> s = new Stack<>();
 
         while(fast!=null && fast.next!=null)
         {
@@ -39,7 +41,7 @@ public class LinkList {
         
         while(slow!=null)
         {
-            if(slow.data!=s.pop().intValue())
+            if(slow.data!=s.pop())
             {
                return false;
             }
